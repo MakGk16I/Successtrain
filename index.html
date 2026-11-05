@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <!-- Этот тег делает сайт адаптивным под мобилки (убирает зум и подгоняет под ширину экрана) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>successtrain — твой путь к лучшей форме</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <main class="app">
+        <section class="screen active" id="screen-1">
+            <div class="screen-content center">
+                <h1 class="title">Твой путь<br />к лучшей форме</h1>
+                <p class="subtitle">Ответь на несколько вопросов — и мы подберём для тебя программу</p>
+                <button class="btn btn-primary" data-next>Начать</button>
+            </div>
+        </section>
+
+        <section class="screen" id="screen-2">
+            <div class="screen-content">
+                <p class="step">Шаг 1 из 4</p>
+                <h2 class="question">Как вас зовут?</h2>
+                <input type="text" id="input-name" class="input" placeholder="Введите имя" autocomplete="name" />
+                <button class="btn btn-primary" id="btn-name-next" disabled>Далее</button>
+            </div>
+        </section>
+
+        <section class="screen" id="screen-3">
+            <div class="screen-content">
+                <p class="step">Шаг 2 из 4</p>
+                <h2 class="question"><span class="user-name"></span>, сколько раз в неделю вы готовы заниматься?</h2>
+                <div class="options">
+                    <button class="btn btn-option" data-field="frequency" data-value="1-3 раза">1-3 раза</button>
+                    <button class="btn btn-option" data-field="frequency" data-value="4-5 раз">4-5 раз</button>
+                    <button class="btn btn-option" data-field="frequency" data-value="6-7 раз">6-7 раз</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="screen" id="screen-4">
+            <div class="screen-content">
+                <p class="step">Шаг 3 из 4</p>
+                <h2 class="question">Какая ваша главная цель?</h2>
+                <div class="options">
+                    <button class="btn btn-option" data-field="goal" data-value="Похудеть">Похудеть</button>
+                    <button class="btn btn-option" data-field="goal" data-value="Набрать массу">Набрать массу</button>
+                    <button class="btn btn-option" data-field="goal" data-value="Подтянуть тело">Подтянуть тело</button>
+                    <button class="btn btn-option" data-field="goal" data-value="Просто быть в тонусе">Просто быть в тонусе</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- НОВЫЙ ЭКРАН: Подготовка к ОГЭ -->
+        <section class="screen" id="screen-oge">
+            <div class="screen-content">
+                <p class="step">Шаг 4 из 5</p>
+                <h2 class="question">Нужна ли вам подготовка к ОГЭ/ЕГЭ по физкультуре?</h2>
+                <div class="options">
+                    <button class="btn btn-option" data-field="oge" data-value="Да, нужна">Да, нужна</button>
+                    <button class="btn btn-option" data-field="oge" data-value="Нет, не нужна">Нет, не нужна</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ЭКРАН: Травмы (изменились шаги) -->
+        <section class="screen" id="screen-5">
+            <div class="screen-content">
+                <p class="step">Шаг 5 из 5</p> <!-- Изменили на 5 из 5 -->
+                <h2 class="question">Есть ли у вас травмы или противопоказания?</h2>
+                <div class="options">
+                    <button class="btn btn-option" data-field="injuries" data-value="Нет, всё ок">Нет, всё ок</button>
+                    <button class="btn btn-option" data-field="injuries" data-value="Да, есть">Да, есть</button>
+                </div>
+            </div>
+        </section>   
+
+<section class="screen" id="screen-5">
+            <div class="screen-content">
+                <p class="step">Шаг 4 из 4</p>
+                <h2 class="question">Есть ли у вас травмы или противопоказания?</h2>
+                <div class="options">
+                    <button class="btn btn-option" data-field="injuries" data-value="Нет, всё ок">Нет, всё ок</button>
+                    <button class="btn btn-option" data-field="injuries" data-value="Да, есть">Да, есть</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="screen" id="screen-6">
+            <div class="screen-content">
+                <h2 class="question">Готово, <span class="user-name"></span>!</h2>
+                <div class="result-card" id="result-card"></div>
+                <p class="result-label">Ваша заявка:</p>
+                <textarea class="result-text" id="result-text" readonly></textarea>
+                <button class="btn btn-secondary" id="btn-copy">Скопировать текст</button>
+                <button class="btn btn-primary" id="btn-send">Отправить менеджеру</button>
+            </div>
+        </section>
+    </main>
+    <div class="toast" id="toast">Текст скопирован ✅</div>
+    <script src="script.js"></script>
+</body>
+</html>
