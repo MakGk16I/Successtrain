@@ -1,5 +1,5 @@
 // Здесь указываем юзернейм менеджера (без @), куда будет уходить заявка
-const MANAGER_USERNAME = "Successstrain_bot"; 
+const MANAGER_USERNAME = "Typicaltypeee"; 
 
 const tg = window.Telegram?.WebApp;
 if (tg) { 
